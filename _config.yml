@@ -102,7 +102,9 @@ theme: butterfly
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ""
+  type: git
+  repository: https://github.com/Gavin1997/hexo-gavin # 用https或者ssh均可
+  branch: main
 
 favicon:
   small: /img/pomelo.png
