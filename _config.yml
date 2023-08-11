@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ""
-description: ""
-keywords:
-author: John Doe
-language: en
+title: 年年柚余
+subtitle: "柚你真好"
+description: "年年柚余"
+keywords: "blog"
+author: gongwei
+language: zh-CN
 timezone: ""
 
 # URL
@@ -45,7 +45,7 @@ relative_link: false
 future: true
 highlight:
   enable: true
-  line_number: true
+  line_number: false
   auto_detect: false
   tab_replace: ""
   wrap: true
@@ -103,3 +103,7 @@ theme: butterfly
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ""
+
+favicon:
+  small: /img/pomelo.png
+  medium: /img/pomelo.png
