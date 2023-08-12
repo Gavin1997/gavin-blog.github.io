@@ -6,7 +6,8 @@
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
-    "dev": "hexo server"
+    "dev": "hexo server",
+    "push": "yarn build & yarn deploy"
   },
   "hexo": {
     "version": "6.3.0"
