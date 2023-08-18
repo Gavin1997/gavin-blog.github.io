@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>GeoJSON的解析和渲染</title>
+      <link href="/gavin-blog.github.io/post/a221d1b6.html"/>
+      <url>/gavin-blog.github.io/post/a221d1b6.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><div class="note simple"><p>使用 <strong>Cesium</strong> 高效加载并渲染 <mark class="hl-label green">GeoJSON</mark>  ：实现多种渲染方式分级、唯一值和单一符号.</p></div><h4 id="数据来源"><a href="#数据来源" class="headerlink" title="数据来源"></a>数据来源</h4><ul><li>上传 shp</li><li>上传 GeoJson</li><li>上传 CAD</li><li>工作空间生成的缓冲区</li></ul><h3 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h3><!-- http://cesium.xin/cesium/cn/Documentation1.62/GeoJsonDataSource.html?classFilter=GeoJsonDataSource --><p>cesium 加载 GeoJSON 数据有自带的接口 <a href="https://cesium.com/learn/cesiumjs/ref-doc/GeoJsonDataSource.html">GeoJsonDataSource</a> 和演示示例,使用的是 <strong>entity</strong> 方式来加载数据,而 <strong>entity</strong> 封装的是 <strong>primitive</strong>,所以想用原生的 <strong>primitive</strong> 方式来加载 GeoJSON 数据试试.</p><h4 id="方式-GeoJsonDataSource"><a href="#方式-GeoJsonDataSource" class="headerlink" title="方式: GeoJsonDataSource"></a>方式: GeoJsonDataSource</h4><details class="toggle" style="border: 1px solid #2C2C2C"><summary class="toggle-button" style="background-color: #2C2C2C;color: white">查看图片</summary><div class="toggle-content"><div class="img-wrap"><div class="img-bg"><img class="img" src="/gavin-blog.github.io/img/gis/geojson/0.jpg"/></div></div></div></details><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> viewer = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">Viewer</span>(<span class="string">&quot;cesiumContainer&quot;</span>);</span><br><span class="line">viewer.<span class="property">dataSources</span>.<span class="title function_">add</span>(</span><br><span class="line">  <span class="title class_">Cesium</span>.<span class="property">GeoJsonDataSource</span>.<span class="title function_">load</span>(<span class="string">&quot;../../SampleData/ne_10m_us_states.topojson&quot;</span>, &#123;</span><br><span class="line">    <span class="attr">stroke</span>: <span class="title class_">Cesium</span>.<span class="property">Color</span>.<span class="property">HOTPINK</span>,</span><br><span class="line">    <span class="attr">fill</span>: <span class="title class_">Cesium</span>.<span class="property">Color</span>.<span class="property">PINK</span>,</span><br><span class="line">    <span class="attr">strokeWidth</span>: <span class="number">3</span>,</span><br><span class="line">    <span class="attr">markerSymbol</span>: <span class="string">&quot;?&quot;</span>,</span><br><span class="line">  &#125;)</span><br><span class="line">);</span><br></pre></td></tr></table></figure><div class="note simple"><p>它提供了一个更高级的抽象,专为简化 GeoJSON 数据的加载和显示,只需要几行代码,就可以加载一个 GeoJSON 文件,并自动将其转换为实体 (Entities) 用于显示,非常易用和直观.</p></div><h4 id="方式-primitive"><a href="#方式-primitive" class="headerlink" title="方式: primitive"></a>方式: primitive</h4><div class="note simple"><p>更低级的方式,需要手动解析 GeoJSON 数据并创建相应的 primitives 来显示这些数据.涉及更多的代码和更复杂的设置.<br>提供了极高的灵活性和控制权,可以精细地控制每一个渲染的细节和优化,以满足特定需求或解决性能问题.<br>更好的扩展性.</p></div><h3 id="初始化-Cesium-Viewer"><a href="#初始化-Cesium-Viewer" class="headerlink" title="初始化 Cesium Viewer"></a>初始化 Cesium Viewer</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> viewer = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">Viewer</span>(<span class="string">&quot;cesiumContainer&quot;</span>);</span><br></pre></td></tr></table></figure><h3 id="使用-json5-解析-GeoJSON"><a href="#使用-json5-解析-GeoJSON" class="headerlink" title="使用 json5 解析 GeoJSON"></a>使用 json5 解析 GeoJSON</h3><svg class="icon" style="width:8em; height:8em" aria-hidden="true"><use xlink:href="#icon-weixin"></use></svg>]]></content>
+      
+      
+      <categories>
+          
+          <category> gis </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> gis </tag>
+            
+            <tag> GeoJSON </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>一日游记</title>
+      <link href="/gavin-blog.github.io/post/aae61326.html"/>
+      <url>/gavin-blog.github.io/post/aae61326.html</url>
+      
+        <content type="html"><![CDATA[<div class="note icon-padding disabled"><i class="note-icon fa-solid fa-van-shuttle"></i><p>崇州是我心中的一个秘密花园，每次造访都仿佛踏入了一幅动人的山水画中。这次的游记带你领略这个迷人之地的魅力</p></div><img src="/gavin-blog.github.io/gallery/yz20230812/1.JPG" class="" title="alt&#x3D;对视"><h3 id="早晨：晨雾缭绕的罨画池"><a href="#早晨：晨雾缭绕的罨画池" class="headerlink" title="早晨：晨雾缭绕的罨画池"></a>早晨：晨雾缭绕的罨画池</h3><p>清晨，当第一缕阳光照射到罨画池，我看到了晨雾中的一片宁静。薄雾像是轻纱，遮挡住了池塘深处的一切，使得罨画池更加神秘。</p><h3 id="中午：阳光下的静谧"><a href="#中午：阳光下的静谧" class="headerlink" title="中午：阳光下的静谧"></a>中午：阳光下的静谧</h3><p>太阳高挂，池水显得格外清澈。我坐在石阶上，听着水声，闭上眼睛，感受这一刻的宁静。阳光照在水面，形成闪烁的光斑，仿佛整个池塘都被点亮。</p><h3 id="下午：漫步池边"><a href="#下午：漫步池边" class="headerlink" title="下午：漫步池边"></a>下午：漫步池边</h3><p>傍晚，我选择沿着池边漫步。每一步都如踏入画中，各种植物、花卉和小动物都为这幅画添加了生命和色彩。特别是当阳光透过树梢，投射在波光粼粼的水面上，一切都显得那么和谐。</p><div class='poem'><div class='poem-title'>水调歌头</div><div class='poem-author'>苏轼</div><p>丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。<br>明月几时有？把酒问青天。<br>不知天上宫阙，今夕是何年？<br>我欲乘风归去，又恐琼楼玉宇，高处不胜寒。<br>起舞弄清影，何似在人间？</p><p>转朱阁，低绮户，照无眠。<br>不应有恨，何事长向别时圆？<br>人有悲欢离合，月有阴晴圆缺，此事古难全。<br>但愿人长久，千里共婵娟。</p></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 旅游 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 旅游 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hexo初体验</title>
+      <link href="/gavin-blog.github.io/post/18844.html"/>
+      <url>/gavin-blog.github.io/post/18844.html</url>
+      
+        <content type="html"><![CDATA[<p>第一次使用 <a href="https://hexo.io/">Hexo</a>! 可以到 <a href="https://hexo.io/docs/">文档</a> 查看更多信息. 可能遇见的一些问题 <a href="https://hexo.io/docs/troubleshooting.html">问题</a> 或者 Issues <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="创建新文章"><a href="#创建新文章" class="headerlink" title="创建新文章"></a>创建新文章</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>更多信息: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>更多信息: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>更多信息: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="部署到远程站点"><a href="#部署到远程站点" class="headerlink" title="部署到远程站点"></a>部署到远程站点</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>更多信息: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> person </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>初次见面，请多指教</title>
+      <link href="/gavin-blog.github.io/post/5b81362b.html"/>
+      <url>/gavin-blog.github.io/post/5b81362b.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="初次见面，请多指教"><a href="#初次见面，请多指教" class="headerlink" title="初次见面，请多指教"></a>初次见面，请多指教</h3><div class="note icon-padding disabled"><i class="note-icon fa-solid fa-seedling"></i><p>2023 年 03 月 23 日 12 点 39 分</p></div><p>我的宝贝来到了这个世界上…<br>躺在产床上，我没有看到你刚出来的样子。听见一声奶奶的哭声，就没有再听见你的声音了。</p><!-- <div id="dplayer0" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"theme":"#FADFA3","loop":"yes","screenshot":"yes","video":{"url":"https://cdn.cnbj1.fds.api.mi-img.com/product-images/xiaomi-shouhuan-8jm0thp/index/v1-2.mp4"},"danmaku":{"api":"https://api.prprpr.me/dplayer/","token":"tokendemo"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script> --><div class="video-container"><iframe src="https://player.vimeo.com/video/855652843" frameborder="0" loading="lazy" allowfullscreen></iframe></div><!-- <div class="bili_video"><iframe class="bilili-video" src="https://player.bilibili.com/player.html?aid=317418000&page=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" width="452" height="544" allowfullscreen="true"> </iframe></div> --><p>我着急的问着医生，这哭没哭呀，医生告诉我，哭过了，宝宝很漂亮。那时候的我迫不及待想看看你的样子，还不停的问医生你的性别。医生只是告诉我，让我等一下自己看。<br>医生剪了你的脐带，然后抱到我边边上，让我看完自己说出你的性别，看到你黑黑的、红红的也不哭，我向医生确认了，啊 是我的女儿！<br>她们给你擦干净身体，穿上了医院送的丑丑的衣服，躺在远远的床上，我看着你乖乖的在吐泡泡，向医生要了手机，赶紧分享给你爸爸，和在外面等着你到来的家人们。<br>￼<img src="/gavin-blog.github.io/gallery/yz20230323/0.jpg" class="" title="alt&#x3D;对视"><br>第一次见面，既熟悉又陌生。明明认识很久了，但却并没有什么感情。那一瞬间觉得一切发生的都好快，你前一天还在我的肚子里，一下子就跑到了我的眼前！医生把你抱到我的身边，我抱着你，好小好小一只，说不上来的感觉。直到开始让你尝试母乳，才觉得，啊 我们又重新连接上了！<br>￼</p><img src="/gavin-blog.github.io/gallery/yz20230323/1.jpg" class="" title="alt&#x3D;对视"><p>原来柚你的故事，也才刚刚开始！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 柚柚 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 柚柚 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
